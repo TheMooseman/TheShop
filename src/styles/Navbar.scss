@@ -50,14 +50,3 @@
     --hover: #{adjust-hue($color, 45deg)};
   }
 }
-
-button {  
-  color: var(--color);
-  transition: 0.25s;
-  
-  &:hover,
-  &:focus { 
-    border-color: var(--hover);
-    color: #fff;
-  }
-}
