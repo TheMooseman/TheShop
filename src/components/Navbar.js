@@ -5,7 +5,7 @@ import { ShoppingCart } from '@mui/icons-material';
 
 function Navbar() {
   const numCartItems = 1;
-  const location = useLocation();
+
   return (
     <div className='navbar'>
       <NavLink to='/pages/Home' style={{textDecoration: 'none', color: 'black'}}>

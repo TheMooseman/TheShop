@@ -3,11 +3,12 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Home from '../pages/Home';
 import Cart from '../pages/Cart';
+import '../styles/Home.scss'
 
 function AnimatedRoutes() {
     const location = useLocation();
   return (
-    <div>
+    <div className='home'>
         <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.pathname}>
               <Route path='/pages/Home' element={<Home />} />
