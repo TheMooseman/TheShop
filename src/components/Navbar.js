@@ -1,18 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.scss'
+import { ShoppingCart } from '@mui/icons-material';
 
 function Navbar() {
+  const numCartItems = 1;
   return (
     <div className='navbar'>
-         <div className="links">
-            <NavLink to="../pages/Home" className='linkBtn'>
-                <a>Home</a> 
-            </NavLink>
-            <NavLink to="../pages/Cart" className='linkBtn'>
-                <a>Cart</a>
-            </NavLink> 
-        </div>
+      <NavLink to='../pages/Home' style={{textDecoration: 'none', color: 'black'}}>
+        <i href className='marker' > The Shop </i>
+      </NavLink>
+      <NavLink to="../pages/Cart" className='linkBtn'>
+        <ShoppingCart className='cartSvg'/> 
+          <p> {numCartItems} </p>
+      </NavLink> 
     </div>
   )
 }
