@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.scss'
 import { ShoppingCart } from '@mui/icons-material';
 
