@@ -13,7 +13,6 @@ function Home(onAddToCart) {
     } else {
       localStorage.setItem(productInfo.title, JSON.stringify(productInfo));
     }
-    console.log(JSON.parse(localStorage.getItem(productInfo.title)));
   }
 
   return (

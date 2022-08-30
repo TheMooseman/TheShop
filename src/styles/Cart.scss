@@ -1,0 +1,112 @@
+.cartButtons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 65px;
+}
+
+.removeButton {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    size: 50px;
+    transition: 0.8s;
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}
+
+.checkoutButton {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    size: 50px;
+    transition: 0.8s;
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}
+
+.cartCard {
+    max-width: 100%;
+    border: 5px solid black;
+    border-right-style: 8px solid black;
+    font: inherit;
+    line-height: 1;
+    padding: .5em 1em;
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+    overflow: hidden;
+
+    transition: 0.8s; 
+    background: -webkit-linear-gradient(0deg, transparent 50%, yellow 50%);
+    background-size: 400px 80px;
+}
+
+.cartCard:hover {
+    transform: scale(1.02);
+}
+
+.cartCard img {
+    overflow: hidden;
+    height: 135px;
+    float: left;
+    margin-right: 2%;
+}
+
+.cartCard h2 {
+    margin-top: -2%;
+    font-family: 'Permanent Marker';
+    font-size: 24px;
+    color: red;
+}
+
+.cartCard .text {
+    color: red;
+    font-family: 'Permanent Marker';
+    font-size: 19px;
+}
+
+.cartCard .quantity {
+    width: 100%;
+}
+
+.cartCard .quantityText {
+    color: red;
+    font-family: 'Permanent Marker';
+    font-size: 19px;
+    display: inline;
+    width: 5px;
+}
+
+
+.cartCardButton {
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    size: 50px;
+    transition: 0.8s;
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}
+
+$colors: (
+    linkBtn: black
+);
+
+@each $button, $color in $colors {
+    .#{$button} {
+      --color: #{$color};
+      --hover: #{adjust-hue($color, 45deg)};
+    }
+  }

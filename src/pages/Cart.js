@@ -1,11 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 
+import '../styles/Cart.scss';
+import CartCards from '../components/CartCards';
+
 function Cart() {
 
-  function emptyCart() {
-    localStorage.clear();
-    console.log(localStorage);
+  function checkoutCart() {
+    console.log('checkout');
   }
 
   return (
@@ -16,9 +18,10 @@ function Cart() {
     transition={{ opacity: 1, duration: 2}}
     exit={{ opacity:0, duration: 1.5 }}
     >
-        CART
-
-        <button onClick={emptyCart}> REMOVE ITEMS </button>
+      <div className='cartButtons'>
+        <button className='checkoutButton' onClick={checkoutCart}> CHECKOUT </button>
+      </div>
+      <CartCards />
     </motion.div>
   )
 }

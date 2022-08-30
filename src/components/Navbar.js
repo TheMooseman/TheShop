@@ -1,17 +1,19 @@
-import React from 'react'
-import { useEffect } from 'react';
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.scss'
 import { ShoppingCart } from '@mui/icons-material';
 
 function Navbar(props) {
-  let totalItems = 0;
-  useEffect(() => {
-    window.addEventListener('storage', () => {
-      totalItems = localStorage.length;
-      console.log('test')
-    })
-  })
+
+  const [totalItems, setItems] = useState(0);
+  
+  function updateCart() {
+    let numItems = 0;
+    for(let i = 0; i < localStorage.length; i++) {
+      numItems += JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
+    }
+    setItems(numItems);
+  }
 
   return (
     <div className='navbar'>
