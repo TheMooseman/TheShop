@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 const products = [
     {
         id: 1, 
-        name: 'shoes',
+        name: 'apple',
         imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
         description: 'running shoes',
         price: '$5'
@@ -19,19 +19,14 @@ const products = [
     },
     {
         id: 3, 
-        name: 'shoes',
+        name: 'purple',
         imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
         description: 'running shoes',
         price: '$5'
     }
 ]
 
-const ProductLayout = () => {
-
-    function appel() {
-        
-    }
-
+const ProductLayout = ({onAddToCart}) => {
 
   return (
     <main>
@@ -43,6 +38,7 @@ const ProductLayout = () => {
                     desc={product.description}
                     image={product.imageUrl}
                     price={product.price}
+                    onAddToCart={onAddToCart}
                     />
                 </Grid>
             ))}

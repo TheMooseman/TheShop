@@ -44,6 +44,18 @@
     font-size: 19px;
 }
 
+.cardButton {
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    size: 50px;
+    transition: 0.8s;
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}
+
 $colors: (
     linkBtn: black
 );

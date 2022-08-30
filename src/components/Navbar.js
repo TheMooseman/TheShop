@@ -1,10 +1,17 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.scss'
 import { ShoppingCart } from '@mui/icons-material';
 
-function Navbar() {
-  const numCartItems = 1;
+function Navbar(props) {
+  let totalItems = 0;
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      totalItems = localStorage.length;
+      console.log('test')
+    })
+  })
 
   return (
     <div className='navbar'>
@@ -13,7 +20,7 @@ function Navbar() {
       </NavLink>
       <NavLink to="/pages/Cart" className='linkBtn'>
         <ShoppingCart className='cartSvg'/> 
-          <p> {numCartItems} </p>
+          <p> {totalItems} </p>
       </NavLink> 
     </div>
   )

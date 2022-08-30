@@ -7,11 +7,11 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 
 function App() {
-  
+
   return (
     <div className="App">
       <Router>
-          <Navbar/>
+          <Navbar totalItems={localStorage.length}/>
           <Link to={Home} />
           <Link to={Cart} />
           <AnimatedRoutes/>
