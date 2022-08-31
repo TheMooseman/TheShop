@@ -19,11 +19,9 @@ const CartCards = ({removeFromCart, minusQuantity, addQuantity}) => {
 
   function updateCards() {
     products = [];
-    let cartCount = 0;
     if(localStorage.length > 0) {
       for( let i = 0; i < localStorage.length; i++) {
         let item = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        cartCount += item.quantity;
         products.push(item);
       }
       dispatch(updateCartCount());

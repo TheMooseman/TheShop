@@ -8,21 +8,21 @@ const products = [
         name: 'apple',
         imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
         description: 'running shoes',
-        price: '$5'
+        price: 5
     },
     {
         id: 2, 
         name: 'shoes',
         imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
         description: 'running shoes',
-        price: '$5'
+        price: 5
     },
     {
         id: 3, 
         name: 'purple',
         imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
         description: 'running shoes',
-        price: '$5'
+        price: 5
     }
 ]
 

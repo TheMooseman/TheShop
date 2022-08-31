@@ -9,7 +9,7 @@ function ProductCard(props) {
         <h2> {props.title} </h2>
         <img src={props.image} />
         <p className='description'> {props.desc} </p>
-        <p className='price'> {props.price} </p>
+        <p className='price'> ${props.price} </p>
         <button className='cardButton' onClick={() => props.onAddToCart(retProps, 1)}> 
         Add To Cart
         </button>

@@ -9,7 +9,7 @@ function CartCard(props) {
         <h2> {props.title} </h2>
         <img src={props.image} />
         <p className='text'> {props.desc} </p>
-        <p className='text'> {props.price} </p>
+        <p className='text'> ${props.price} </p>
         
         
         <div className='quantity'>

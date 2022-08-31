@@ -10,9 +10,16 @@
     margin: 10px;
     overflow: hidden;
 
-    transition: 0.8s; 
-    background: -webkit-linear-gradient(0deg, transparent 50%, yellow 50%);
-    background-size: 400px 80px;
+    transition: 0.8s;
+    
+    background: linear-gradient(
+        120deg,
+        white 0%,
+        white 60%,
+        yellow 60%,
+        yellow 100%
+    );
+
 }
 
 .card:hover {

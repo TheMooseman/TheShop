@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.scss'
 import { ShoppingCart } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Navbar(props) {
   const itemCount = useSelector((state) => state.cartNum.value);

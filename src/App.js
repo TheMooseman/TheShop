@@ -9,8 +9,9 @@ import { useSelector } from 'react-redux';
 
 function App() {
   const cartCount = useSelector((state) => state.cartNum.value);
-  
+
   return (
+    <div className='App-bg'>
     <div className="App">
       <Router>
           <Navbar />
@@ -18,6 +19,7 @@ function App() {
           <Link to={Cart} />
           <AnimatedRoutes/>
         </Router>
+    </div>
     </div>
   );
 }
