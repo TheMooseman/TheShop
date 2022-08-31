@@ -2,18 +2,10 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import '../styles/Navbar.scss'
 import { ShoppingCart } from '@mui/icons-material';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Navbar(props) {
-
-  const [totalItems, setItems] = useState(0);
-  
-  function updateCart() {
-    let numItems = 0;
-    for(let i = 0; i < localStorage.length; i++) {
-      numItems += JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
-    }
-    setItems(numItems);
-  }
+  const itemCount = useSelector((state) => state.cartNum.value);
 
   return (
     <div className='navbar'>
@@ -22,7 +14,7 @@ function Navbar(props) {
       </NavLink>
       <NavLink to="/pages/Cart" className='linkBtn'>
         <ShoppingCart className='cartSvg'/> 
-          <p> {totalItems} </p>
+          <p> {itemCount} </p>
       </NavLink> 
     </div>
   )

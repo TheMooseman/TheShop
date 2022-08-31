@@ -1,9 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import ProductLayout from '../components/ProductLayout';
+import { useDispatch } from 'react-redux';
+import { updateCartCount } from '../features/CartRed';
 
 function Home(onAddToCart) {
-
+  const dispatch = useDispatch();
   function handleAddToCart(productInfo, quantity) {
     let item;
     item = JSON.parse(localStorage.getItem(productInfo.title));
@@ -13,6 +15,7 @@ function Home(onAddToCart) {
     } else {
       localStorage.setItem(productInfo.title, JSON.stringify(productInfo));
     }
+    dispatch(updateCartCount());
   }
 
   return (

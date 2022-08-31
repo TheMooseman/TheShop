@@ -2,10 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import {Grid} from '@material-ui/core';
 import CartCard from './CartCard';
+import { updateCartCount } from '../features/CartRed';
+import { useDispatch } from 'react-redux';
 
 const CartCards = ({removeFromCart, minusQuantity, addQuantity}) => {
 
-  
+  const dispatch = useDispatch();
   let products = [];
   const [cards, setCards] = useState(products);
 
@@ -17,10 +19,14 @@ const CartCards = ({removeFromCart, minusQuantity, addQuantity}) => {
 
   function updateCards() {
     products = [];
+    let cartCount = 0;
     if(localStorage.length > 0) {
       for( let i = 0; i < localStorage.length; i++) {
-        products.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+        let item = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        cartCount += item.quantity;
+        products.push(item);
       }
+      dispatch(updateCartCount());
       setCards(products);
     }
   }
