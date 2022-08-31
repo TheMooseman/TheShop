@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 function Cart() {
   const totalPrice = useSelector((state) => state.cartNum.price);
-  
+
   function checkoutCart() {
     console.log('checkout');
   }
@@ -23,7 +23,7 @@ function Cart() {
       
       <div className='cartButtons'>
         <div className='cartSubtotal'>
-          <p> Total : ${totalPrice} </p>
+          <p> Total ${totalPrice} </p>
         </div>
 
         <button className='checkoutButton' onClick={checkoutCart}> CHECKOUT </button>
