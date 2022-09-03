@@ -1,32 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Grid} from '@material-ui/core';
 import ProductCard from './ProductCard';
-
-const products = [
-    {
-        id: 1, 
-        name: 'apple',
-        imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
-        description: 'running shoes',
-        price: 5
-    },
-    {
-        id: 2, 
-        name: 'shoes',
-        imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
-        description: 'running shoes',
-        price: 5
-    },
-    {
-        id: 3, 
-        name: 'purple',
-        imageUrl: 'https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg',
-        description: 'running shoes',
-        price: 5
-    }
-]
+import { useSelector } from 'react-redux';
+import { db } from '../firebase-config';
+import { addDoc, collection, getDocs } from 'firebase/firestore';
 
 const ProductLayout = ({onAddToCart}) => {
+
+    const cartCount = useSelector((state) => state.cartNum.value);
+    const [products, setProducts] = useState([]);
+    const productCollectionRef = collection(db, 'products');
+    useEffect(() => {
+
+    const getProducts = async () => {
+      const data = await getDocs(productCollectionRef);
+      setProducts(data.docs.map((doc) => ({...doc.data()})));
+      console.log(products);
+    }
+
+    getProducts();
+  }, [])
 
   return (
     <main>
@@ -34,9 +27,9 @@ const ProductLayout = ({onAddToCart}) => {
             {products.map((product) => (
                 <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
                     <ProductCard
-                    title={product.name}
+                    title={product.title}
                     desc={product.description}
-                    image={product.imageUrl}
+                    image={product.image}
                     price={product.price}
                     onAddToCart={onAddToCart}
                     />

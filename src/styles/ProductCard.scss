@@ -1,5 +1,6 @@
 .card {
-    max-width: 100%;
+    width: 80%;
+    height: 80%;
     border: 5px solid black;
     border-right-style: 8px solid black;
     font: inherit;
@@ -28,7 +29,9 @@
 
 .card img {
     overflow: hidden;
-    height: 135px;
+    max-width: 135px;
+    max-height: 135px;
+    object-fit: cover;
     float: left;
     margin-right: 2%;
 }

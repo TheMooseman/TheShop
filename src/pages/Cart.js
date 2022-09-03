@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 
 import '../styles/Cart.scss';
+import '../styles/ProductCard.scss'
 import CartCards from '../components/CartCards';
 import { useSelector } from 'react-redux';
 
