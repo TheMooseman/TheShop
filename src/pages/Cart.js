@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
-
 import '../styles/Cart.scss';
 import '../styles/ProductCard.scss'
 import CartCards from '../components/CartCards';
 import { useSelector } from 'react-redux';
+import CheckoutPopup from '../components/CheckoutPopup';
 
 function Cart() {
   const totalPrice = useSelector((state) => state.cartNum.price);
+  const [popup, setPopup] = useState(false);
 
   function checkoutCart() {
-    console.log('checkout');
+    setPopup(true);
+  }
+
+  function closePopup() {
+    setPopup(false);
   }
 
   return (
@@ -33,6 +38,10 @@ function Cart() {
       <div className='cartItems'>
         <CartCards />
       </div>
+
+      <CheckoutPopup trigger={popup} setTrigger={closePopup}> 
+        Checkout
+      </CheckoutPopup>
 
     </motion.div>
   )
