@@ -15,7 +15,6 @@ const ProductLayout = ({onAddToCart}) => {
     const getProducts = async () => {
       const data = await getDocs(productCollectionRef);
       setProducts(data.docs.map((doc) => ({...doc.data()})));
-      console.log(products);
     }
 
     getProducts();

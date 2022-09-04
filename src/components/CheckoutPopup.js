@@ -12,9 +12,9 @@ function CheckoutPopup(props) {
             <form>
 
                 <div>
-                    <label>First </label>
+                    <label>First</label>
                     <input type='text'/>
-                    <label>Last </label>
+                    <label>Last</label>
                     <input type='text'/>
                 </div>
 
@@ -22,20 +22,21 @@ function CheckoutPopup(props) {
                     <label>Address </label>
                     <input type='text'/>
                     <br></br>
-                    <label>City </label>
-                    <input type='text'/>
-                    <label>Zip </label>
-                    <input type='text'/>
+                    <label>City</label>
+                    <input type='text'style={{width: '6rem'}}/>
+                    
+                    <label>Zip</label>
+                    <input type='text'style={{width: '4rem'}}/>
                 </div>
 
                 <div>
-                    <label>State </label>
+                    <label>State</label>
                     <select>
                         {data.state.map(item => (
                             <option value={item}>{item}</option>
                         ))}
                     </select> 
-                    <label>Country </label>
+                    <label>Country</label>
                     <select>
                         {data.country.map(item => (
                             <option value={item}>{item}</option>
@@ -44,10 +45,10 @@ function CheckoutPopup(props) {
                 </div>
 
                 <div>
-                    <label>Card </label>
+                    <label>Card</label>
                     <input type='text'/>
-                    <label>Security Code </label>
-                    <input type='text'/>
+                    <label>Security Code</label>
+                    <input type='text' style={{width: '3rem'}}/>
                 </div>
 
                 <div>

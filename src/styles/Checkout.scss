@@ -32,8 +32,7 @@
     size: 50px;
     transition: 0.8s;
     &:hover {
-        background-color: red;
-        color: black;
+        background-color: yellow;
     }
 }
 
@@ -47,7 +46,14 @@
     size: 50px;
     transition: 0.8s;
     &:hover {
-        background-color: red;
-        color: black;
+        background-color: yellow;
     }
+}
+
+.checkoutPopup input {
+    margin: 0.25rem;
+}
+
+.checkoutPopup select {
+    margin: 0.25rem;
 }
