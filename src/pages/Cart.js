@@ -3,15 +3,23 @@ import { motion } from 'framer-motion';
 import '../styles/Cart.scss';
 import '../styles/ProductCard.scss'
 import CartCards from '../components/CartCards';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCartCount } from '../features/CartRed';
 import CheckoutPopup from '../components/CheckoutPopup';
 
 function Cart() {
   const totalPrice = useSelector((state) => state.cartNum.price);
   const [popup, setPopup] = useState(false);
+  const dispatch = useDispatch();
 
   function checkoutCart() {
     setPopup(true);
+  }
+
+  function finishCheckout() {
+    setPopup(false);
+    localStorage.clear();
+    dispatch(updateCartCount());
   }
 
   function closePopup() {
@@ -39,7 +47,7 @@ function Cart() {
         <CartCards />
       </div>
 
-      <CheckoutPopup trigger={popup} setTrigger={closePopup}> 
+      <CheckoutPopup trigger={popup} setTrigger={closePopup} checkout={finishCheckout}> 
         Checkout
       </CheckoutPopup>
 

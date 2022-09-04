@@ -16,7 +16,7 @@
 .checkoutPopup-inner {
     position: relative;
     padding: 2rem;
-    width: 60%;
+    width: 70%;
     background-color: white;
     border-radius: 0.5rem;
 }
@@ -26,6 +26,21 @@
     top: 1rem;
     right: 1rem;
 
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    size: 50px;
+    transition: 0.8s;
+    &:hover {
+        background-color: red;
+        color: black;
+    }
+}
+
+.checkoutPopup .orderBtn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
     font-family: 'Permanent Marker';
     background-color: white;
     color: red;

@@ -24,9 +24,9 @@ const CartCards = ({removeFromCart, minusQuantity, addQuantity}) => {
         let item = JSON.parse(localStorage.getItem(localStorage.key(i)));
         products.push(item);
       }
-      dispatch(updateCartCount());
-      setCards(products);
     }
+    dispatch(updateCartCount());
+    setCards(products);
   }
 
   function removeFromCart(key) {
