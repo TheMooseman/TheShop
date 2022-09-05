@@ -10,7 +10,7 @@ function CheckoutPopup(props) {
 
   return (props.trigger) ? (
     <div className='checkoutPopup'>
-        <div className='checkoutPopup' onClick={props.setTrigger}></div>
+        <div className='checkoutPopupBg' onClick={props.setTrigger}></div>
         <div className='checkoutPopup-inner' >
             <button className='close-btn' onClick={props.setTrigger}>X</button>
             {props.children}
