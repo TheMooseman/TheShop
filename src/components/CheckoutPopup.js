@@ -4,9 +4,14 @@ import '../styles/Checkout.scss';
 
 function CheckoutPopup(props) {
 
+    function handleClickOutside() {
+
+    }
+
   return (props.trigger) ? (
     <div className='checkoutPopup'>
-        <div className='checkoutPopup-inner'>
+        <div className='checkoutPopup' onClick={props.setTrigger}></div>
+        <div className='checkoutPopup-inner' >
             <button className='close-btn' onClick={props.setTrigger}>X</button>
             {props.children}
             <form>
