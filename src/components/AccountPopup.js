@@ -10,8 +10,8 @@ function AccountPopup(props) {
     const [logPass, setLogPass] = useState('');
 
     function renderError() {
-        if(props.error != null) {
-            return <h3>{props.error}</h3>
+        if(props.error != '') {
+            return <p>{'Invalid Login'}</p>
         } else {
             return '';
         }
@@ -38,7 +38,7 @@ function AccountPopup(props) {
                         </div>
                         <div>
                         <button className='loginBtn'
-                            onClick={() => {props.login(logEmail, logPass)}}>
+                            onClick={(e) => {props.login(logEmail, logPass, e)}}>
                             Login
                         </button>
                     </div>
@@ -59,7 +59,7 @@ function AccountPopup(props) {
                         </div>
                         <div>
                         <button className='registerBtn'
-                            onClick={() => {props.register(regEmail, regPass)}}>
+                            onClick={(e) => {props.register(regEmail, regPass, e)}}>
                             Register
                         </button>
                     </div>

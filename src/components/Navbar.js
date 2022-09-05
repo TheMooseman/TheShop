@@ -36,7 +36,8 @@ const Navbar = (props) => {
     setPopup(true);
   }
 
-  async function handleLogin(email, pass) {
+  async function handleLogin(email, pass, e) {
+    e.preventDefault();
     let userInfo = {};
     let closePopup = true;
     try {
@@ -48,15 +49,16 @@ const Navbar = (props) => {
       setLoginErr(error);
       console.log(error.message);
     }
-
+    
     console.log(userInfo)
-    if(!closePopup) {
+    if(closePopup) {
       setPopup(false);
     }
     
   }
 
-  async function handleRegister(email, pass) {
+  async function handleRegister(email, pass, e) {
+    e.preventDefault();
     let userInfo = {};
     try {
       userInfo = await createUserWithEmailAndPassword(auth, email, pass);
