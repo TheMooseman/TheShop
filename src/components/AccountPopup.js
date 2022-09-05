@@ -16,6 +16,7 @@ function AccountPopup(props) {
             return '';
         }
     }
+    
     if(props.user == undefined) {
         return (props.trigger) ? (
             <div className='accountPopup'>

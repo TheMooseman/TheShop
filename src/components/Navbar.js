@@ -23,10 +23,9 @@ const Navbar = (props) => {
 
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser);
     });
 
-  }, [])
+  })
 
   function updateItems() {
       dispatch(updateCartCount());
@@ -52,7 +51,7 @@ const Navbar = (props) => {
     
     console.log(userInfo)
     if(closePopup) {
-      setPopup(false);
+      //setPopup(false);
     }
     
   }
@@ -66,7 +65,7 @@ const Navbar = (props) => {
       console.log(error.message);
     }
 
-    setPopup(false);
+    //setPopup(false);
   }
 
   async function handleLogout() {
