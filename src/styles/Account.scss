@@ -49,10 +49,31 @@
     }
 }
 
+.accountPopup .logoutBtn {
+    justify-self: center;
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    width: 50%;
+    transition: 0.8s;
+    &:hover {
+        background-color: yellow;
+    }
+}
+
 .accountPopup .loginBtn {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    justify-self: center;
+    font-family: 'Permanent Marker';
+    background-color: white;
+    color: red;
+    width: 50%;
+    transition: 0.8s;
+    &:hover {
+        background-color: yellow;
+    }
+}
+
+.registerBtn {
     font-family: 'Permanent Marker';
     background-color: white;
     color: red;
@@ -61,6 +82,7 @@
     &:hover {
         background-color: yellow;
     }
+     
 }
 
 .accountPopup input {
