@@ -4,17 +4,13 @@ import '../styles/Checkout.scss';
 
 function CheckoutPopup(props) {
 
-    function handleClickOutside() {
-
-    }
-
   return (props.trigger) ? (
     <div className='checkoutPopup'>
         <div className='checkoutPopupBg' onClick={props.setTrigger}></div>
         <div className='checkoutPopup-inner' >
             <button className='close-btn' onClick={props.setTrigger}>X</button>
             {props.children}
-            <form>
+            <div>
 
                 <div>
                     <label>First</label>
@@ -60,7 +56,7 @@ function CheckoutPopup(props) {
                     <button className='orderBtn' onClick={props.checkout}>Place Order</button>
                 </div>
 
-            </form>
+            </div>
         </div>
     </div>
   ) : '';
